@@ -59,6 +59,9 @@ export const Footer: React.FC = () => {
           <div className="text-[9px] text-stone-300 tracking-widest uppercase font-medium">
             © 2026 Channa & Shaini Wedding
           </div>
+          <div className="text-[9px] text-black tracking-widest uppercase font-medium mt-2">
+            Designed by invitemint - <a href="https://wa.me/94707819074" target="_blank" rel="noopener noreferrer" className="hover:text-brand-sakura-deep transition-colors underline decoration-brand-sakura/50 underline-offset-4">+94707819074</a>
+          </div>
         </div>
       </div>
     </footer>

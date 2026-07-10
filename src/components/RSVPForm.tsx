@@ -7,7 +7,7 @@ export const RSVPForm: React.FC = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     guests: '1',
-    dietaryNotes: '',
+    wishes: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -21,12 +21,12 @@ export const RSVPForm: React.FC = () => {
       await submitToGoogleSheet('rsvp', {
         fullName: formData.fullName,
         guests: guestValue,
-        dietaryNotes: formData.dietaryNotes,
+        wishes: formData.wishes,
         submittedAt: new Date().toISOString(),
       });
 
       setStatus('success');
-      setFormData({ fullName: '', guests: '1', dietaryNotes: '' });
+      setFormData({ fullName: '', guests: '1', wishes: '' });
     } catch (error) {
       console.error('Error sending RSVP to Google Sheets: ', error);
       setStatus('error');
@@ -136,12 +136,12 @@ export const RSVPForm: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2">Dietary Notes (Optional)</label>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2">Wishes for the Couple (Optional)</label>
                   <textarea
-                    placeholder="We'd love to know if you have any allergies..."
-                    className="w-full bg-white/80 px-6 py-4 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-sakura/30 focus:border-brand-sakura-deep/40 outline-none transition-all duration-300 h-28 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300"
-                    value={formData.dietaryNotes}
-                    onChange={(e) => setFormData({ ...formData, dietaryNotes: e.target.value })}
+                    placeholder="Leave a message or wish for the couple..."
+                    className="w-full bg-white/80 px-6 py-4 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-sakura/30 focus:border-brand-sakura-deep/40 outline-none transition-all duration-300 h-32 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300"
+                    value={formData.wishes}
+                    onChange={(e) => setFormData({ ...formData, wishes: e.target.value })}
                   />
                 </div>
 

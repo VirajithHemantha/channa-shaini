@@ -9,7 +9,7 @@ import { CeremonyDetails } from './components/CeremonyDetails';
 import { CoupleDetails } from './components/CoupleDetails';
 // Removed Timeline import
 import { Location } from './components/Location';
-// Removed RSVPForm import
+import { RSVPForm } from './components/RSVPForm';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -131,8 +131,9 @@ export default function App() {
               <Location />
             </section>
 
-
-
+            <section id="rsvp" className="py-20 sm:py-32 relative overflow-hidden bg-brand-ivory">
+              <RSVPForm />
+            </section>
             <Footer />
           </motion.main>
         )}
